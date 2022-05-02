@@ -19,13 +19,7 @@
  */
 /**
  * FFMPEG三件套之ffplay，基于4.2.1版本
- *
- * 廖明华 Liao Minghua
- * 592407834@qq.com
- * 本程序将ffmpeg的三大范例之ffplay.c移植到QT平台进行编译，以方便调试。
- * 该程序功能：基于ffmpeg库开发多媒体播放器。
- * 音视频开发课程：https://ke.qq.com/course/468797?tuin=137bb271
- *
+
  *
  */
 /**

@@ -1126,15 +1126,15 @@ static int warned_cfg = 0;
 
 static void print_all_libs_info(int flags, int level)
 {
-    PRINT_LIB_INFO(avutil,     AVUTIL,     flags, level);
-    PRINT_LIB_INFO(avcodec,    AVCODEC,    flags, level);
-    PRINT_LIB_INFO(avformat,   AVFORMAT,   flags, level);
-    PRINT_LIB_INFO(avdevice,   AVDEVICE,   flags, level);
-    PRINT_LIB_INFO(avfilter,   AVFILTER,   flags, level);
-
-    PRINT_LIB_INFO(swscale,    SWSCALE,    flags, level);
-    PRINT_LIB_INFO(swresample, SWRESAMPLE, flags, level);
-    PRINT_LIB_INFO(postproc,   POSTPROC,   flags, level);
+//    PRINT_LIB_INFO(avutil,     AVUTIL,     flags, level);
+//    PRINT_LIB_INFO(avcodec,    AVCODEC,    flags, level);
+//    PRINT_LIB_INFO(avformat,   AVFORMAT,   flags, level);
+//    PRINT_LIB_INFO(avdevice,   AVDEVICE,   flags, level);
+//    PRINT_LIB_INFO(avfilter,   AVFILTER,   flags, level);
+//
+//    PRINT_LIB_INFO(swscale,    SWSCALE,    flags, level);
+//    PRINT_LIB_INFO(swresample, SWRESAMPLE, flags, level);
+//    PRINT_LIB_INFO(postproc,   POSTPROC,   flags, level);
 }
 
 static void print_program_info(int flags, int level)
@@ -1153,28 +1153,28 @@ static void print_program_info(int flags, int level)
 
 static void print_buildconf(int flags, int level)
 {
-    const char *indent = flags & INDENT ? "  " : "";
-    char str[] = { FFMPEG_CONFIGURATION };
-    char *conflist, *remove_tilde, *splitconf;
-
-    // Change all the ' --' strings to '~--' so that
-    // they can be identified as tokens.
-    while ((conflist = strstr(str, " --")) != NULL) {
-        strncpy(conflist, "~--", 3);
-    }
-
-    // Compensate for the weirdness this would cause
-    // when passing 'pkg-config --static'.
-    while ((remove_tilde = strstr(str, "pkg-config~")) != NULL) {
-        strncpy(remove_tilde, "pkg-config ", 11);
-    }
-
-    splitconf = strtok(str, "~");
-    av_log(NULL, level, "\n%sconfiguration:\n", indent);
-    while (splitconf != NULL) {
-        av_log(NULL, level, "%s%s%s\n", indent, indent, splitconf);
-        splitconf = strtok(NULL, "~");
-    }
+//    const char *indent = flags & INDENT ? "  " : "";
+//    char str[] = { FFMPEG_CONFIGURATION };
+//    char *conflist, *remove_tilde, *splitconf;
+//
+//    // Change all the ' --' strings to '~--' so that
+//    // they can be identified as tokens.
+//    while ((conflist = strstr(str, " --")) != NULL) {
+//        strncpy(conflist, "~--", 3);
+//    }
+//
+//    // Compensate for the weirdness this would cause
+//    // when passing 'pkg-config --static'.
+//    while ((remove_tilde = strstr(str, "pkg-config~")) != NULL) {
+//        strncpy(remove_tilde, "pkg-config ", 11);
+//    }
+//
+//    splitconf = strtok(str, "~");
+//    av_log(NULL, level, "\n%sconfiguration:\n", indent);
+//    while (splitconf != NULL) {
+//        av_log(NULL, level, "%s%s%s\n", indent, indent, splitconf);
+//        splitconf = strtok(NULL, "~");
+//    }
 }
 
 void show_banner(int argc, char **argv, const OptionDef *options)
@@ -1199,9 +1199,9 @@ int show_version(void *optctx, const char *opt, const char *arg)
 
 int show_buildconf(void *optctx, const char *opt, const char *arg)
 {
-    av_log_set_callback(log_callback_help);
-    print_buildconf      (INDENT|0, AV_LOG_INFO);
-
+//    av_log_set_callback(log_callback_help);
+//    print_buildconf      (INDENT|0, AV_LOG_INFO);
+//
     return 0;
 }
 
